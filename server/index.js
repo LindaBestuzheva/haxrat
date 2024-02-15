@@ -27,7 +27,7 @@ global.clientManager = clientManager;
 global.apkBuilder = apkBuilder;
 
 // spin up socket server
-let client_io = IO.listen(CONST.control_port);
+let client_io = IO.attach(CONST.control_port);
 
 client_io.sockets.pingInterval = 30000;
 client_io.on('connection', (socket) => {
